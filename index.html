@@ -1,5 +1,49 @@
-<html>
-    <h1>Welcome Sean</h1>
-    <h3>Please click one of the buttons below to explore some templates</h3>
-    <button onclick="window.location.href='https://google.com';">Test Button</button>
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <!-- <h1 id="Welcome"></h1>
+        <h1 id="cursor">_</h1> -->
+        <h1 id="Welcome" style="display:inline;"></h1> 
+        <h2 id="cursor" style="display:inline;">_</h2> 
+        <!-- <hr style="clear:both;"/> -->
+        <h3>Please click one of the buttons below to explore some templates</h3>
+        
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <button onclick="window.location.href='https://google.com';">Test Button</button>
+        <p>Click the button to start typing the word "Test".</p>
+        
+        <!-- <button onclick="typeWriter()">Start Typing</button> -->
+        <p id="demo"></p>
+        <script>
+            window.onload=function(){
+                blinkCursor();
+                typeWriter();
+            }
+
+            var i = 0;
+            var txt = 'Wesley\'s projects';
+            var speed = 50;
+
+            function typeWriter() {
+                if (i < txt.length) {
+                    document.getElementById("Welcome").innerHTML += txt.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+
+            function blinkCursor() {
+            const cursor = document.getElementById("cursor");
+            if (cursor.style.visibility === "visible") {
+                cursor.style.visibility = "hidden";
+            } else {
+                cursor.style.visibility = "visible";
+            }
+            setTimeout(blinkCursor, 500);
+            }
+        </script>        
+    </body>
 </html>
