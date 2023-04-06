@@ -1,9 +1,9 @@
 window.onload=function() {
     blinkCursor();
-    if (window.location.href.indexOf('index.html') > -1) {
-        typeWriter();
-    } else if(window.location.href.indexOf('torc.html') > -1) {
+    if(window.location.href.indexOf('torc.html') > -1) {
         torcTypeWriter();
+    } else {
+        typeWriter();
     }
 }
 
