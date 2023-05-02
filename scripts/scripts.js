@@ -9,7 +9,7 @@ window.onload=function() {
 
 var i = 0;
 var j = 0;
-var title = 'Wesley\'s projects';
+var title = 'Wesley Ireland';
 var torcTitle = 'Torc Templates';
 var titleSpeed = 50;
 var cursorSpeed = 500;
