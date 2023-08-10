@@ -40,17 +40,17 @@ function blinkCursor() {
     setTimeout(blinkCursor, cursorSpeed);
 }
 
-function checkPassword() {
-    var enteredPassword = prompt("Please enter the password:");
-    var correctPassword = "Power"; // Replace with your actual password
+// function checkPassword() {
+//     var enteredPassword = prompt("Please enter the password:");
+//     var correctPassword = "Power"; // Replace with your actual password
     
-    if (enteredPassword === correctPassword) {
-        alert("Password correct! You have access.");
-    } else {
-        alert("Incorrect password. Access denied.");
-        window.location.href = "index.html"; // Redirect to index.html
-    }
-}
+//     if (enteredPassword === correctPassword) {
+//         alert("Password correct! You have access.");
+//     } else {
+//         alert("Incorrect password. Access denied.");
+//         window.location.href = "index.html"; // Redirect to index.html
+//     }
+// }
 
 function checkPassword(event) {
     var enteredPassword = document.getElementById("password").value;
