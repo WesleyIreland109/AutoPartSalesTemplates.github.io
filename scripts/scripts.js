@@ -1,6 +1,15 @@
 window.onload=function() {
     blinkCursor();
-    if(window.location.href.indexOf('torc.html') > -1) {
+    // checkPassword();
+    var currentFileName = window.location.pathname.split('/').pop();
+            
+    // Specify the target file name
+    var targetFileName = "ppt.html"; // Replace with your target file name
+
+    if (currentFileName === targetFileName) {
+        checkPassword();
+    }
+    if(window.location.href.indexOf('ppt.html') > -1) {
         torcTypeWriter();
     } else {
         typeWriter();
@@ -10,7 +19,7 @@ window.onload=function() {
 var i = 0;
 var j = 0;
 var title = 'Wesley Ireland';
-var torcTitle = 'Torc Templates';
+var torcTitle = 'Powerpoint Night';
 var titleSpeed = 50;
 var cursorSpeed = 500;
 
@@ -38,4 +47,16 @@ function blinkCursor() {
         cursor.style.visibility = "visible";
     }
     setTimeout(blinkCursor, cursorSpeed);
+}
+
+function checkPassword() {
+    var enteredPassword = prompt("Please enter the password:");
+    var correctPassword = "Power"; // Replace with your actual password
+    
+    if (enteredPassword === correctPassword) {
+        alert("Password correct! You have access.");
+    } else {
+        alert("Incorrect password. Access denied.");
+        window.location.href = "index.html"; // Redirect to index.html
+    }
 }
