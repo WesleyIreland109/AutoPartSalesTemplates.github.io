@@ -48,11 +48,11 @@ button:hover {
 @media (max-width: 767px) {
   body {
     padding: 1rem;
-    font-size: 1rem;
+    font-size: 1.3rem; /* Increased font size for mobile */
   }
   button {
     padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    font-size: 1.3rem; /* Increased font size for mobile */
   }
 }
 
@@ -73,7 +73,7 @@ button:hover {
   border-radius: 5px;
   color: white;
   font-family: Inconsolata, monospace;
-  font-size: 1rem;
+  font-size: 1.3rem; /* Increased font size for mobile */
   padding: 0.75rem;
   text-shadow: 0 0 5px #c8c8c8;
   width: 100%;
