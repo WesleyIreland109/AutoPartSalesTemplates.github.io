@@ -42,7 +42,7 @@ function blinkCursor() {
 
 function checkPassword(event) {
     var enteredPassword = document.getElementById("password").value;
-    var correctPassword = "Power"; // Replace with your actual password
+    var correctPassword = "Power";
     
     if (event.keyCode === 13 || event.which === 13) { // Enter key pressed
         if (enteredPassword === correctPassword) {
