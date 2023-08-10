@@ -1,14 +1,5 @@
 window.onload=function() {
     blinkCursor();
-    // checkPassword();
-    var currentFileName = window.location.pathname.split('/').pop();
-            
-    // Specify the target file name
-    var targetFileName = "ppt.html"; // Replace with your target file name
-
-    if (currentFileName === targetFileName) {
-        checkPassword();
-    }
     if(window.location.href.indexOf('ppt.html') > -1) {
         torcTypeWriter();
     } else {
@@ -58,5 +49,18 @@ function checkPassword() {
     } else {
         alert("Incorrect password. Access denied.");
         window.location.href = "index.html"; // Redirect to index.html
+    }
+}
+
+function checkPassword(event) {
+    var enteredPassword = document.getElementById("password").value;
+    var correctPassword = "Power"; // Replace with your actual password
+    
+    if (event.keyCode === 13 || event.which === 13) { // Enter key pressed
+        if (enteredPassword === correctPassword) {
+            window.location.href = "ppt.html"; // Redirect to next page
+        } else {
+            alert("Incorrect password. Please try again.");
+        }
     }
 }
