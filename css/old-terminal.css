@@ -5,6 +5,7 @@ body {
   height: 100vh;
   margin: 0;
   overflow: auto;
+  overflow-x: hidden;
   padding: 2rem;
   color: white;
   font: 1.3rem Inconsolata, monospace;
@@ -53,6 +54,14 @@ button:hover {
     padding: 0.75rem 1.5rem;
     font-size: 3.3rem; /* Increased font size for mobile */
   }
+  nested-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 3.3rem; /* Increased font size for mobile */
+  }
+  button.accordion-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 3.3rem; /* Increased font size for mobile */
+  }
 }
 
 .container {
@@ -77,4 +86,114 @@ button:hover {
   text-shadow: 0 0 5px #c8c8c8;
   width: 100%;
   box-sizing: border-box;
+}
+
+/* Pseudo-element for scrollbar */
+body::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  background-color: rgba(0, 150, 0, 0.5); /* Background color of the scrollbar track */
+}
+
+/* Styles for the scrollbar thumb/dragger */
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 150, 0, 0.75); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+/* Styles for the scrollbar track when hovered */
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #00cc00; /* Change color on hover */
+}
+
+/* Styles for the scrollbar track when the scrollbar is not being interacted with */
+body::-webkit-scrollbar-track {
+  background-color: rgba(0, 150, 0, 0.5); /* Background color of the scrollbar track */
+}
+
+/* Styles for the scrollbar corner (if displayed) */
+body::-webkit-scrollbar-corner {
+  background-color: transparent; /* Background color of the scrollbar corner */
+}
+
+.accordion-button {
+  background-color: rgba(0, 150, 0, 0.75);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-family: Inconsolata, monospace;
+  font-size: 1.3rem;
+  padding: 1rem 2rem;
+  text-shadow: 0 0 5px #c8c8c8;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-button:hover {
+  background-color: #00cc00;
+}
+
+.accordion-content1 {
+  display: none;
+  padding-left: 20px;
+}
+.accordion-content2 {
+  display: none;
+  padding-left: 20px;
+}
+.accordion-content3 {
+  display: none;
+  padding-left: 20px;
+}
+
+.nested-button {
+  background-color: #00cc00;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nested-button:hover {
+  background-color: #009900;
+}
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio (adjust as needed) */
+}
+
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* Remove iframe border */
+}
+
+.pfp-class {
+  font-size: 2px;
+}
+
+.custom-iframe {
+  /* position: fixed;
+  top: 0;
+  right: 0; */
+  float: right;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  width: 250px;
+  height: 315px;
+  overflow: hidden;
+}
+
+.iframe-container {
+  float: right;
+  top: 0;
+  right: 0;
+  padding: 10px; /* Add padding to the box */
 }

@@ -52,3 +52,30 @@ function checkPassword(event) {
         }
     }
 }
+
+function toggleAccordionVideoGames() {
+    const accordionContent = document.querySelector('.accordion-content1');
+    if (accordionContent.style.display === 'block') {
+      accordionContent.style.display = 'none';
+    } else {
+      accordionContent.style.display = 'block';
+    }
+  }
+
+  function toggleAccordionMicroControllers() {
+    const accordionContent = document.querySelector('.accordion-content2');
+    if (accordionContent.style.display === 'block') {
+      accordionContent.style.display = 'none';
+    } else {
+      accordionContent.style.display = 'block';
+    }
+  }
+
+  function toggleAccordionWebsites() {
+    const accordionContent = document.querySelector('.accordion-content3');
+    if (accordionContent.style.display === 'block') {
+      accordionContent.style.display = 'none';
+    } else {
+      accordionContent.style.display = 'block';
+    }
+  }
