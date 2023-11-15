@@ -79,3 +79,12 @@ function toggleAccordionVideoGames() {
       accordionContent.style.display = 'block';
     }
   }
+
+  function toggleAccordionContactInfo() {
+    const accordionContent = document.querySelector('.accordion-content4');
+    if (accordionContent.style.display === 'block') {
+      accordionContent.style.display = 'none';
+    } else {
+      accordionContent.style.display = 'block';
+    }
+  }
