@@ -1,5 +1,6 @@
 var pfp = "ERROR";
 const delay = 1; // Adjust the typing speed in milliseconds
+const charactersPerStep = 400;
 
 window.onload=function() {
     fetch("images/bigAsciiPFP.txt")
@@ -23,12 +24,21 @@ function typeWriter() {
     const preElement = document.getElementById('PFP');
 
     function type() {
-        if (i < pfp.length) {
-            preElement.textContent += pfp.charAt(i);
-            i++;
+        // if (i < pfp.length) {
+        //     preElement.textContent += pfp.slice(i, i + charactersPerStep);
+        //     // preElement.textContent += pfp.charAt(i);
+        //     i++;
+        //     setTimeout(type, delay);
+        // } else {
+        //     setTimeout(erase, delay);
+        // }
+        const nextPos = currentPos + charactersPerStep;
+        const chunk = pfp.slice(currentPos, nextPos);
+        preElement.textContent += chunk;
+        currentPos = nextPos;
+
+        if (currentPos < pfp.length) {
             setTimeout(type, delay);
-        } else {
-            setTimeout(erase, delay);
         }
     }
 
