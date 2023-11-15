@@ -1,12 +1,12 @@
 var pfp = "ERROR";
 const delay = 1; // Adjust the typing speed in milliseconds
-const charactersPerStep = 400;
+const charactersPerChunk = 400;
 
-window.onload=function() {
+window.onload = function () {
     fetch("images/bigAsciiPFP.txt")
         .then(response => {
             if (!response.ok) {
-                throw new Error(`Failed to fetch file: ${txtFile}`);
+                throw new Error(`Failed to fetch file: ${response.url}`);
             }
             return response.text();
         })
@@ -24,29 +24,21 @@ function typeWriter() {
     const preElement = document.getElementById('PFP');
 
     function type() {
-        // if (i < pfp.length) {
-        //     preElement.textContent += pfp.slice(i, i + charactersPerStep);
-        //     // preElement.textContent += pfp.charAt(i);
-        //     i++;
-        //     setTimeout(type, delay);
-        // } else {
-        //     setTimeout(erase, delay);
-        // }
-        const nextPos = currentPos + charactersPerStep;
-        const chunk = pfp.slice(currentPos, nextPos);
-        preElement.textContent += chunk;
-        currentPos = nextPos;
-
-        if (currentPos < pfp.length) {
+        if (i < pfp.length) {
+            preElement.textContent += pfp.substring(i, i + charactersPerChunk);
+            i += charactersPerChunk;
             setTimeout(type, delay);
+        } else {
+            setTimeout(erase, delay);
         }
     }
 
     function erase() {
         if (preElement.textContent.length > 0) {
-            preElement.textContent = preElement.textContent.slice(0, -1);
+            preElement.textContent = preElement.textContent.slice(0, -charactersPerChunk);
             setTimeout(erase, delay);
         } else {
+            i = 0; // Reset index for the next iteration
             setTimeout(type, delay);
         }
     }
